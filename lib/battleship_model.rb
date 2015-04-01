@@ -29,8 +29,6 @@ class CreateDB < ActiveRecord::Migration
     create_table :oneplayers do |column|
       column.string :name
       column.integer :number_of_ship
-      column.integer :hit
-      column.integer :turn
       column.string  :ship_one_position
       column.string  :ship_two_position
 
@@ -45,7 +43,6 @@ class CreateDB < ActiveRecord::Migration
       column.string  :ship_two_position
 
     end #end of twoplayers
-
 
 
   end #end of initialize

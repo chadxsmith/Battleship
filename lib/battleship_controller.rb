@@ -3,7 +3,8 @@ require_relative 'battleship_model'
 require 'pry'
 
 
-#(placeholder for Release 2) while true do
+loop  do
+
   puts "Welcome to Battleship"
   puts "Select 1 to Start a New Game"
 
@@ -18,33 +19,34 @@ case launch_game
 
   when 1
 
-    one_player_hit_counter = []
-    one_player_turn_counter = []
+      one_player_hit_counter =  []
+      one_player_turn_counter = []
 
-    two_player_hit_counter = []
-    two_player_turn_counter = []
+      two_player_hit_counter =  []
+      two_player_turn_counter = []
 
       puts "Each game can have two players"
       puts "Enter the first player's name"
       one_player_name = gets.chomp
       puts one_player_name
-
       Oneplayer.create(name:one_player_name)
+
 
       puts "Winning a match involves sinking both players battle ships. At the moment, " + one_player_name + " has two ships"
       puts Oneplayer.create(number_of_ship:2)
 
+
       puts "Enter 'Next' to continue"
       continue = gets.chomp
 
+
       puts "Enter the first player's 1st ship location. Any number between 1 - 20 will work"
       one_player_ship_one_position = gets.chomp
-
       puts Oneplayer.create(ship_one_position:one_player_ship_one_position)
+
 
       puts "Enter the first player's 2nd ship location. Any number between 1 - 20 will work"
       one_player_ship_two_position = gets.chomp
-
       puts Oneplayer.create(ship_two_position:one_player_ship_two_position)
 
 
@@ -58,22 +60,26 @@ case launch_game
       puts "Enter the second player's name"
       two_player_name = gets.chomp
 
-      puts two_player_name
 
+      puts two_player_name
       Twoplayer.create(name:two_player_name)
+
 
       puts "Enter the second player's 1st ship location. Any number between 1 - 20 will work"
       two_player_ship_one_position = gets.chomp
 
+
       puts Twoplayer.create(ship_one_position:two_player_ship_one_position)
+
 
       puts "Enter the second player's 2nd ship location. Any number between 1 - 20 will work"
       two_player_ship_two_position = gets.chomp
 
+
       puts Twoplayer.create(ship_two_position:two_player_ship_two_position)
 
-      puts "Great! Let's start the match"
 
+      puts "Great! Let's start the match"
 
 
       loop  do
@@ -90,17 +96,54 @@ case launch_game
 
                     puts   one_player_hit_counter.count
 
-                    if   one_player_hit_counter.count > 0
-                      puts "You have won! Congrats! It only took " + one_player_turn_counter.count.to_s + " turns and " + one_player_hit_counter.count.to_s + " hits"
-                    else
-                      puts "Great job! Now let's see what " + two_player_name + " can do!"
+                        if   one_player_hit_counter.count > 0
+                          puts "You have won! Congrats! It only took " + one_player_turn_counter.count.to_s + " turns and " + one_player_hit_counter.count.to_s + " hits"
+                          puts "Would you like to play again or quit the program?"
+                          puts "Select 1 for play again"
+                          puts "Select 2 to to return to main menu"
+                          play_again_or_quit = gets.chomp.to_i
 
-                    end #end of hit_counter.count
+
+                          case play_again_or_quit
+
+                              when 1
+
+                                def reset_tables
+                                    ActiveRecord::Base.connection.tables.each do |table|
+                                    ActiveRecord::Base.connection.drop_table(table)
+                                  end
+                                end
+
+                                break
+
+                              when 2
+
+                                def reset_tables
+                                    ActiveRecord::Base.connection.tables.each do |table|
+                                    ActiveRecord::Base.connection.drop_table(table)
+                                  end
+                                end
+
+                                break
+
+                        end #end of play_again_or_quit
+
+
+
+
+
+
+                        else
+                          puts "Great job! Now let's see what " + two_player_name + " can do!"
+
+                        end #end of one_player_hit_counter.count
 
                   else
+
                     puts "You missed!"
 
-                  end
+                  end #end of Twoplayer.find_by(ship_one_position: one_player_torpedo.to_i) || Twoplayer.find_by(ship_two_position: one_player_torpedo.to_i)
+
 
 
 
@@ -116,18 +159,22 @@ case launch_game
 
                     puts two_player_hit_counter
 
-                    if   two_player_hit_counter > 0
-                        puts "You have won! Congrats! It only took" + two_player_turn_counter.count.to_s + "turns and " + two_player_hit_counter.count.to_s + " hits"
+                        if   two_player_hit_counter > 0
+                            puts "You have won! Congrats! It only took" + two_player_turn_counter.count.to_s + "turns and " + two_player_hit_counter.count.to_s + " hits"
 
-                    else
-                      puts "Great job! Now let's see what " + one_player_name + " can do!"
+                        else
+                          puts "Great job! Now let's see what " + one_player_name + " can do!"
 
-                    end
+                        end # two_player_hit_counter > 0
 
                   else
+                      puts "You missed"
 
-                  end
-      end
+                  end #end Oneplayer.find_by(ship_one_position: two_player_torpedo.to_i) || Oneplayer.find_by(ship_two_position: two_player_torpedo.to_i)
 
-end
+      end #end of when
+
+end #end of loop
+
+end #end of case
 binding.pry
