@@ -99,8 +99,8 @@ case launch_game
                         if   one_player_hit_counter.count > 0
                           puts "You have won! Congrats! It only took " + one_player_turn_counter.count.to_s + " turns and " + one_player_hit_counter.count.to_s + " hits"
                           puts "Would you like to play again or quit the program?"
-                          puts "Select 1 for play again"
-                          puts "Select 2 to to return to main menu"
+                          puts "Select 1 for return to main menu"
+                          puts "Select 2 to to quit program"
                           play_again_or_quit = gets.chomp.to_i
 
 
@@ -118,13 +118,8 @@ case launch_game
 
                               when 2
 
-                                def reset_tables
-                                    ActiveRecord::Base.connection.tables.each do |table|
-                                    ActiveRecord::Base.connection.drop_table(table)
-                                  end
-                                end
-
-                                break
+                                abort
+                                
 
                         end #end of play_again_or_quit
 
