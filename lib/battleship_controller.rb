@@ -19,7 +19,6 @@ case launch_game
 
   when 1
 
-
       temp_ship = Ship.new
       player_one_ship_one = temp_ship.randomize
       puts player_one_ship_one
@@ -53,8 +52,7 @@ case launch_game
       Oneplayer.create(name:one_player_name)
 
 
-      puts "Winning a match involves sinking both players battle ships. At the moment, " + one_player_name + " has two ships"
-      puts Oneplayer.create(number_of_ship:2)
+      puts "Winning a match involves sinking both players battle ships; maintaining 5 spots each. At the moment, " + one_player_name + " has two ships"
 
 
       puts "Enter 'Next' to continue"

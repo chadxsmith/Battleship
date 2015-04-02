@@ -13,20 +13,41 @@ def reset_tables
 end
 
 class Oneplayer < ActiveRecord::Base
+  has_many :names
+  validates_presence_of :name
 
 end #end of Oneplayer
 
 class Twoplayer < ActiveRecord::Base
+  has_many :names
+  validates_presence_of :name
 
 end #end of Twoplayer
 
 class Ship < ActiveRecord::Base
+  has_many :locations
+  validates_presence_of :location
+
+  def spot
+
+    i = 1
+    while i < 96
+    Ship.create(location:i)
+    i = i + 1
+    end
+
+    return
+
+  end
+
+
+
+
 
   def randomize
-
-      ship_location_all =*(1..95)
-      player_ship_start =  ship_location_all.shuffle.take(1)
-      player_ship_start =  player_ship_start[0]
+      ship_location_all = Ship.all
+      # ship_location_all =*(1..95)
+      player_ship_start = ship_location_all.shuffle.take(1)[0].location
 
       # i reperesents our counter
       i = 0
@@ -48,6 +69,7 @@ class Ship < ActiveRecord::Base
 
       return  player_ship_locations
   end #end of randomize
+
 
 end #end of Ship
 
@@ -74,17 +96,7 @@ class CreateDB < ActiveRecord::Migration
 
 
     create_table :ships do |column|
-      column.integer :ship_one
-      column.integer :ship_two
-      column.integer :ship_three
-      column.integer :ship_four
-      column.integer :ship_five
-      column.integer :ship_six
-      column.integer :ship_seven
-      column.integer :ship_eight
-      column.integer :ship_nine
-      column.integer :ship_ten
-
+      column.integer :location
     end #end of ship
 
   end #end of initialize
