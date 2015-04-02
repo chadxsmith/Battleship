@@ -19,6 +19,27 @@ case launch_game
 
   when 1
 
+
+      temp_ship = Ship.new
+      player_one_ship_one = temp_ship.randomize
+      puts player_one_ship_one
+
+      temp_ship = Ship.new
+      player_one_ship_two = temp_ship.randomize
+      puts player_one_ship_two
+
+      temp_ship = Ship.new
+      player_two_ship_one = temp_ship.randomize
+      puts player_two_ship_one
+
+      temp_ship = Ship.new
+      player_two_ship_two = temp_ship.randomize
+      puts player_two_ship_two
+
+
+      # puts one_player_ship_one_location
+
+
       one_player_hit_counter =  []
       one_player_turn_counter = []
 
@@ -40,21 +61,7 @@ case launch_game
       continue = gets.chomp
 
 
-      puts "Enter the first player's 1st ship location. Any number between 1 - 20 will work"
-      one_player_ship_one_position = gets.chomp
-      puts Oneplayer.create(ship_one_position:one_player_ship_one_position)
-
-
-      puts "Enter the first player's 2nd ship location. Any number between 1 - 20 will work"
-      one_player_ship_two_position = gets.chomp
-      puts Oneplayer.create(ship_two_position:one_player_ship_two_position)
-
-
-
-
       puts "Great! Let's now enter some information about the second player"
-
-
 
 
       puts "Enter the second player's name"
@@ -65,29 +72,16 @@ case launch_game
       Twoplayer.create(name:two_player_name)
 
 
-      puts "Enter the second player's 1st ship location. Any number between 1 - 20 will work"
-      two_player_ship_one_position = gets.chomp
-
-
-      puts Twoplayer.create(ship_one_position:two_player_ship_one_position)
-
-
-      puts "Enter the second player's 2nd ship location. Any number between 1 - 20 will work"
-      two_player_ship_two_position = gets.chomp
-
-
-      puts Twoplayer.create(ship_two_position:two_player_ship_two_position)
-
-
       puts "Great! Let's start the match"
 
 
       loop  do
 
-              puts one_player_name + ", where is " + two_player_name + " ship? Enter number 1 - 20"
+              puts one_player_name + ", where is " + two_player_name + " ship? Enter number 1 - 100"
               one_player_torpedo = gets.chomp
 
-                  if Twoplayer.find_by(ship_one_position: one_player_torpedo.to_i) || Twoplayer.find_by(ship_two_position: one_player_torpedo.to_i)
+                  if player_two_ship_one.include?(one_player_torpedo.to_i) || player_two_ship_two.include?(one_player_torpedo)
+
 
                     puts "You've hit " + two_player_name + " ship"
 
@@ -119,7 +113,8 @@ case launch_game
                               when 2
 
                                 abort
-                                
+
+                                break
 
                         end #end of play_again_or_quit
 
@@ -142,10 +137,10 @@ case launch_game
 
 
 
-              puts two_player_name + ", where is " + one_player_name + "ship? Enter number 1 - 20"
+              puts two_player_name + ", where is " + one_player_name + "ship? Enter number 1 - 100"
               two_player_torpedo = gets.chomp
 
-                  if Oneplayer.find_by(ship_one_position: two_player_torpedo.to_i) || Oneplayer.find_by(ship_two_position: two_player_torpedo.to_i)
+                  if player_one_ship_one.include?(two_player_torpedo) || player_one_ship_two.include?(two_player_torpedo)
 
                     puts "You've hit " + two_player_name + " ship"
 
@@ -167,9 +162,14 @@ case launch_game
 
                   end #end Oneplayer.find_by(ship_one_position: two_player_torpedo.to_i) || Oneplayer.find_by(ship_two_position: two_player_torpedo.to_i)
 
-      end #end of when
+      end #end of loop
 
-end #end of loop
+  else
+
+    break
+
 
 end #end of case
+
+end #end of loop
 binding.pry

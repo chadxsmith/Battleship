@@ -20,6 +20,36 @@ class Twoplayer < ActiveRecord::Base
 
 end #end of Twoplayer
 
+class Ship < ActiveRecord::Base
+
+  def randomize
+
+      ship_location_all =*(1..95)
+      player_ship_start =  ship_location_all.shuffle.take(1)
+      player_ship_start =  player_ship_start[0]
+
+      # i reperesents our counter
+      i = 0
+
+      #this section says make this object equal an arrary one item, which is ship's
+      #starting location
+
+      player_ship_locations = [player_ship_start]
+
+      #this section says until this condition is no longer true, do the stuff below
+      while i < 4
+
+      #this section says place ((player_ship_start + 1) into player_ship_locations
+      player_ship_locations.push(player_ship_start + 1)
+      #this section condition ensures i increments to ensure infinit loops do not occur
+        i = i + 1
+        player_ship_start = player_ship_start + 1
+      end
+
+      return  player_ship_locations
+  end #end of randomize
+
+end #end of Ship
 
 
 class CreateDB < ActiveRecord::Migration
@@ -37,13 +67,25 @@ class CreateDB < ActiveRecord::Migration
     create_table :twoplayers do |column|
       column.string :name
       column.integer :number_of_ship
-      column.integer :hit
-      column.integer :turn
       column.string  :ship_one_position
       column.string  :ship_two_position
 
     end #end of twoplayers
 
+
+    create_table :ships do |column|
+      column.integer :ship_one
+      column.integer :ship_two
+      column.integer :ship_three
+      column.integer :ship_four
+      column.integer :ship_five
+      column.integer :ship_six
+      column.integer :ship_seven
+      column.integer :ship_eight
+      column.integer :ship_nine
+      column.integer :ship_ten
+
+    end #end of ship
 
   end #end of initialize
 
