@@ -18,58 +18,40 @@ case launch_game
 
       temp_ship = Ship.new
       player_one_ship_one = temp_ship.randomize
-
       player_one_ship_one = temp_ship.increment(player_one_ship_one)
-      puts player_one_ship_one
-
 
       temp_ship = Ship.new
       player_one_ship_two = temp_ship.randomize
       player_one_ship_two = temp_ship.increment(player_one_ship_two)
-      puts player_one_ship_two
-
 
       temp_ship = Ship.new
       player_two_ship_one = temp_ship.randomize
       player_two_ship_one = temp_ship.increment(player_two_ship_one)
-      puts player_two_ship_one
-
 
       temp_ship = Ship.new
       player_two_ship_two = temp_ship.randomize
       player_two_ship_two = temp_ship.increment(player_two_ship_two)
-      puts player_two_ship_two
-
-
 
       puts "Each game can have two players"
       puts "Enter the first player's name"
       one_player_name = gets.chomp
-      puts one_player_name
-      one_player = Oneplayer.create(name:one_player_name,ship_one_position:player_one_ship_one, ship_two_position:player_one_ship_two, hit_count: 0, turn_count:0)
+      one_player = Oneplayer.create(name:one_player_name,ship_one_position:player_two_ship_one, ship_two_position:player_two_ship_two, hit_count:0, turn_count:0)
 
 
       puts "Winning a match involves sinking both players battle ships; maintaining 5 spots each. At the moment, " + one_player_name + " has two ships"
 
-
       puts "Enter 'Next' to continue"
       continue = gets.chomp
 
-
       puts "Great! Let's now enter some information about the second player"
-
 
       puts "Enter the second player's name"
       two_player_name = gets.chomp
-
 
       puts two_player_name
       two_player = Twoplayer.create(name:two_player_name,ship_one_position:player_two_ship_one, ship_two_position:player_two_ship_two, hit_count:0, turn_count:0)
 
       puts "Ready? Let's start the match"
-
-      # unless  one_player.hit_count > 0 ||two_player.hit_count > 0 ||
-
 
       loop  do
 
@@ -81,8 +63,6 @@ case launch_game
 
                     puts "You've hit " + two_player_name + " ship"
 
-                    # one_player_hit_counter.push(1)
-
                     one_player.hit_count += 1
                     one_player.save
 
@@ -91,9 +71,7 @@ case launch_game
                     one_player.save
 
 
-                    # one_player_turn_counter.push(1)
-
-                        if   one_player.hit_count  > 0
+                        if   one_player.hit_count  > 3
                           puts "You have won! Congrats! It only took " +   one_player.turn_count.to_s + " turns and " + one_player.hit_count.to_s + " hits"
                           puts "Would you like to play again or quit the program?"
                           puts "Select 1 for return to main menu"
@@ -122,10 +100,6 @@ case launch_game
                         end #end of play_again_or_quit
 
 
-
-
-
-
                         else
                           puts "Great job! Now let's see what " + two_player_name + " can do!"
 
@@ -140,8 +114,6 @@ case launch_game
 
 
                   end #end of Twoplayer.find_by(ship_one_position: one_player_torpedo.to_i) || Twoplayer.find_by(ship_two_position: one_player_torpedo.to_i)
-
-
 
 
               puts two_player_name + ", where is " + one_player_name + "ship? Enter number 1 - 100"
@@ -162,7 +134,7 @@ case launch_game
                     # two_player_turn_counter.push(1)
 
 
-                        if   two_player.hit_count > 0
+                        if   two_player.hit_count > 3
                             puts "You have won! Congrats! It only took" + two_player.turn_count.to_s + "turns and " + two_player.hit_count.to_s + " hits"
                             puts "Would you like to play again or quit the program?"
                             puts "Select 1 for return to main menu"
@@ -213,8 +185,6 @@ case launch_game
                       else
 
                       end
-
-
 
                   end #end Oneplayer.find_by(ship_one_position: two_player_torpedo.to_i) || Oneplayer.find_by(ship_two_position: two_player_torpedo.to_i)
 
