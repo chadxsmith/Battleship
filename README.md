@@ -58,7 +58,7 @@ During Release 2, a seed file was introduced for ship's locaiton. The approach i
 
 #Set Up Instructions:
 To run the Battleship location, please enter execute the following
-1) Download battleship_controller.rb and battleship_model.rb
+- 1) Download battleship_controller.rb and battleship_model.rb
 2) Download PostgreSQL
 3) Open PostgreSQL
 4) Within the command line, run PSQL
