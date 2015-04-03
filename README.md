@@ -50,7 +50,7 @@ Release 3:
 - Ship - Location 
 
 #Pseudo Coding: 
-Before developing for each Release, pseudo coding was utilized to draw solutions before typing commands. Leveraged drawings can be found here: https://drive.google.com/drive/u/1/#folders/0Bw3DcedwlFaVSlNmV243Q1ljeDQ
+Before developing for each Release, pseudo coding was utilized via sketching schemas and procedurals scripts. Several examples can be found here: https://drive.google.com/drive/u/1/#folders/0Bw3DcedwlFaVSlNmV243Q1ljeDQ
 
 
 #Seed File:
