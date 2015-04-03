@@ -35,14 +35,14 @@ The bridge between problem solving strategy and code was my Rspec script. The ma
 After completing the previous stages, ERDs were created to define required data. Each Release's ERD included the following:
 
 Release 1: 
-Player 1 - Name, Number_of_ships, Hits, Turns, Ship_Position_One, Ship_Position_Two
-Player 2 - Name, Number_of_ships, Hits, Turns, Ship_Position_One, Ship_Position_Two
+- Player 1 - Name, Number_of_ships, Hits, Turns, Ship_Position_One, Ship_Position_Two
+- Player 2 - Name, Number_of_ships, Hits, Turns, Ship_Position_One, Ship_Position_Two
 
 
 Release 2:
-Player 1 - Name, Hits, Turns
-Player 2 - Name, Hits, Turns
-Ship - Location 
+- Player 1 - Name, Hits, Turns
+- Player 2 - Name, Hits, Turns
+- Ship - Location 
 
 Release 3:
 Player 1 - Name, Hit_count, Turn_count, Ship_Position_One, Ship_Position_Two
