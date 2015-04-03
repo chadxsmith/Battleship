@@ -21,19 +21,28 @@ case launch_game
 
       temp_ship = Ship.new
       player_one_ship_one = temp_ship.randomize
+
+      player_one_ship_one = temp_ship.increment(player_one_ship_one)
       puts player_one_ship_one
+
 
       temp_ship = Ship.new
       player_one_ship_two = temp_ship.randomize
+      player_one_ship_two = temp_ship.increment(player_one_ship_two)
       puts player_one_ship_two
+
 
       temp_ship = Ship.new
       player_two_ship_one = temp_ship.randomize
+      player_two_ship_one = temp_ship.increment(player_two_ship_one)
       puts player_two_ship_one
+
 
       temp_ship = Ship.new
       player_two_ship_two = temp_ship.randomize
+      player_two_ship_two = temp_ship.increment(player_two_ship_two)
       puts player_two_ship_two
+
 
 
       # puts one_player_ship_one_location
@@ -78,7 +87,7 @@ case launch_game
               puts one_player_name + ", where is " + two_player_name + " ship? Enter number 1 - 100"
               one_player_torpedo = gets.chomp
 
-                  if player_two_ship_one.include?(one_player_torpedo.to_i) || player_two_ship_two.include?(one_player_torpedo)
+                  if player_two_ship_one.include?(one_player_torpedo.to_i) || player_two_ship_two.include?(one_player_torpedo.to_i)
 
 
                     puts "You've hit " + two_player_name + " ship"
@@ -138,7 +147,7 @@ case launch_game
               puts two_player_name + ", where is " + one_player_name + "ship? Enter number 1 - 100"
               two_player_torpedo = gets.chomp
 
-                  if player_one_ship_one.include?(two_player_torpedo) || player_one_ship_two.include?(two_player_torpedo)
+                  if player_one_ship_one.include?(two_player_torpedo.to_i) || player_one_ship_two.include?(two_player_torpedo.to_i)
 
                     puts "You've hit " + two_player_name + " ship"
 

@@ -1,3 +1,5 @@
+require 'pry'
+
 ActiveRecord::Base.logger = Logger.new(STDOUT)
 
 ActiveRecord::Base.establish_connection(
@@ -28,47 +30,45 @@ class Ship < ActiveRecord::Base
   has_many :locations
   validates_presence_of :location
 
-  def spot
+  #
+  # random_var= 45
+  #
+  # temp_ship = Ship.new
+  #
+  # puts temp_ship.increment(random_var)
 
-    i = 1
-    while i < 96
-    Ship.create(location:i)
-    i = i + 1
-    end
 
-    return
+  def randomize
+
+      ship_location_all =*(1..95)
+      player_ship_start =  ship_location_all.shuffle.take(1)
+      player_ship_start =  player_ship_start[0]
+      # i reperesents our counter
 
   end
 
 
-
-
-
-  def randomize
-      ship_location_all = Ship.all
-      # ship_location_all =*(1..95)
-      player_ship_start = ship_location_all.shuffle.take(1)[0].location
-
-      # i reperesents our counter
+  def increment x
       i = 0
 
       #this section says make this object equal an arrary one item, which is ship's
       #starting location
 
-      player_ship_locations = [player_ship_start]
+      player_ship_locations = [x]
 
       #this section says until this condition is no longer true, do the stuff below
       while i < 4
 
       #this section says place ((player_ship_start + 1) into player_ship_locations
-      player_ship_locations.push(player_ship_start + 1)
+      player_ship_locations.push(x + 1)
       #this section condition ensures i increments to ensure infinit loops do not occur
         i = i + 1
-        player_ship_start = player_ship_start + 1
+        x = x + 1
       end
 
       return  player_ship_locations
   end #end of randomize
+
 
 
 end #end of Ship
@@ -103,3 +103,5 @@ class CreateDB < ActiveRecord::Migration
 
 
 end #end of CreateDB
+
+# binding.pry
