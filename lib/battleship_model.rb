@@ -27,15 +27,6 @@ class Twoplayer < ActiveRecord::Base
 end #end of Twoplayer
 
 class Ship < ActiveRecord::Base
-  has_many :locations
-  validates_presence_of :location
-
-  #
-  # random_var= 45
-  #
-  # temp_ship = Ship.new
-  #
-  # puts temp_ship.increment(random_var)
 
 
   def randomize
@@ -80,7 +71,8 @@ class CreateDB < ActiveRecord::Migration
 
     create_table :oneplayers do |column|
       column.string :name
-      column.integer :number_of_ship
+      column.integer :hit_count
+      column.integer :turn_count
       column.string  :ship_one_position
       column.string  :ship_two_position
 
@@ -88,16 +80,13 @@ class CreateDB < ActiveRecord::Migration
 
     create_table :twoplayers do |column|
       column.string :name
-      column.integer :number_of_ship
+      column.integer :hit_count
+      column.integer :turn_count
       column.string  :ship_one_position
       column.string  :ship_two_position
 
     end #end of twoplayers
 
-
-    create_table :ships do |column|
-      column.integer :location
-    end #end of ship
 
   end #end of initialize
 

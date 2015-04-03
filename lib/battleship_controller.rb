@@ -19,29 +19,29 @@ case launch_game
 
   when 1
 
-      temp_ship = Ship.new
-      player_one_ship_one = temp_ship.randomize
+    temp_ship = Ship.new
+    player_one_ship_one = temp_ship.randomize
 
-      player_one_ship_one = temp_ship.increment(player_one_ship_one)
-      puts player_one_ship_one
-
-
-      temp_ship = Ship.new
-      player_one_ship_two = temp_ship.randomize
-      player_one_ship_two = temp_ship.increment(player_one_ship_two)
-      puts player_one_ship_two
+    player_one_ship_one = temp_ship.increment(player_one_ship_one)
+    puts player_one_ship_one
 
 
-      temp_ship = Ship.new
-      player_two_ship_one = temp_ship.randomize
-      player_two_ship_one = temp_ship.increment(player_two_ship_one)
-      puts player_two_ship_one
+    temp_ship = Ship.new
+    player_one_ship_two = temp_ship.randomize
+    player_one_ship_two = temp_ship.increment(player_one_ship_two)
+    puts player_one_ship_two
 
 
-      temp_ship = Ship.new
-      player_two_ship_two = temp_ship.randomize
-      player_two_ship_two = temp_ship.increment(player_two_ship_two)
-      puts player_two_ship_two
+    temp_ship = Ship.new
+    player_two_ship_one = temp_ship.randomize
+    player_two_ship_one = temp_ship.increment(player_two_ship_one)
+    puts player_two_ship_one
+
+
+    temp_ship = Ship.new
+    player_two_ship_two = temp_ship.randomize
+    player_two_ship_two = temp_ship.increment(player_two_ship_two)
+    puts player_two_ship_two
 
 
 
@@ -149,15 +149,41 @@ case launch_game
 
                   if player_one_ship_one.include?(two_player_torpedo.to_i) || player_one_ship_two.include?(two_player_torpedo.to_i)
 
-                    puts "You've hit " + two_player_name + " ship"
+                    puts "You've hit " + one_player_name + " ship"
 
                     two_player_hit_counter.push(1)
                     two_player_turn_counter.push(1)
 
                     puts two_player_hit_counter
 
-                        if   two_player_hit_counter > 0
+                        if   two_player_hit_counter.count > 0
                             puts "You have won! Congrats! It only took" + two_player_turn_counter.count.to_s + "turns and " + two_player_hit_counter.count.to_s + " hits"
+                            puts "Would you like to play again or quit the program?"
+                            puts "Select 1 for return to main menu"
+                            puts "Select 2 to to quit program"
+                            play_again_or_quit = gets.chomp.to_i
+
+
+                            case play_again_or_quit
+
+                                when 1
+
+                                  def reset_tables
+                                      ActiveRecord::Base.connection.tables.each do |table|
+                                      ActiveRecord::Base.connection.drop_table(table)
+                                    end
+                                  end
+
+                                  break
+
+                                when 2
+
+                                  abort
+
+                                  break
+
+                          end #end of play_again_or_quit
+
 
                         else
                           puts "Great job! Now let's see what " + one_player_name + " can do!"
