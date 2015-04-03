@@ -54,7 +54,7 @@ Before developing for each Release, pseudo coding was utilized to draw solutions
 
 
 #Seed File:
-During Release 2, a seed file was introduced for ship's locaiton. The approach introduced unforeseen complexity, when entering Release 3, and require revisiting ship's location as an array from 1 to 95
+During Release 2, a seed file was introduced for ship's locaiton. The approach introduced unforeseen complexity, when entering Release 3, and required revisiting ship's location as an array from 1 to 95
 
 #Set Up Instructions:
 To run the Battleship location, please enter execute the following
