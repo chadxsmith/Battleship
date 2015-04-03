@@ -183,13 +183,49 @@ case launch_game
                           abort
 
                       else
-                        abort
+
 
                       end
 
                   end #end Oneplayer.find_by(ship_one_position: two_player_torpedo.to_i) || Oneplayer.find_by(ship_two_position: two_player_torpedo.to_i)
 
+
       end #end of loop
+
+    when 2
+
+    # binding.pry
+
+    puts player1 = Oneplayer.all
+
+        player1_name = player1[0].name.to_s
+        player1_hit = player1[0].hit_count.to_s
+        player1_turn = player1[0].turn_count.to_s
+        player1_ship_one_position = player1[0].ship_one_position.to_s
+        player1_ship_two_position = player1[0].ship_two_position.to_s
+
+
+    puts player2 = Oneplayer.all
+
+        player2_name = player2[0].name.to_s
+        player2_hit = player2[0].hit_count.to_s
+        player2_turn = player2[0].turn_count.to_s
+        player2_ship_one_position = player2[0].ship_one_position.to_s
+        player2_ship_one_position = player2[0].ship_two_position.to_s
+
+
+    puts "Awesome! You guys are back! Let's play again"
+
+    puts player1_name + " you're up!"
+
+    loop do
+
+      puts player1_name + ", where is " + player2_name  + " ship? Enter number 1 - 100"
+      one_player_torpedo = gets.chomp
+
+
+    end #end of loop
+
 
 end #end of case
 
