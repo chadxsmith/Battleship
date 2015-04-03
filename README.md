@@ -5,9 +5,9 @@ The Battleship assignment required implementing the following process:
 #Release & User Stories: 
 Success required breaking the problem into blocks of complexity. Each block, tagged as a Release, helped guide my development strategy. The releases included:
 
-Release 1: Allow User to play a battleship game, where location is predetermine by the user
-Release 2: Allow User to play a battlelship game, where location is randomized
-Release 3: Allow User to play a battleship game, with randomized locations, and quit and resume at leisure 
+- Release 1: Allow User to play a battleship game, where location is predetermine by the user
+- Release 2: Allow User to play a battlelship game, where location is randomized
+- Release 3: Allow User to play a battleship game, with randomized locations, and quit and resume at leisure 
 
 Upon defining each Release, User Stories were provided to ensure greater clarity throughout each phase. 
 
