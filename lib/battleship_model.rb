@@ -87,10 +87,15 @@ class CreateDB < ActiveRecord::Migration
 
     end #end of twoplayers
 
+    create_table :ships do |column|
+      column.integer :location
+
+    end
+
 
   end #end of initialize
 
 
 end #end of CreateDB
-
+# 
 # binding.pry
