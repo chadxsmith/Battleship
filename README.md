@@ -54,7 +54,7 @@ Before developing for each Release, pseudo coding was utilized to draw solutions
 
 
 #Seed File:
-During Release 2, a seed file was introduced for ship's locaiton. This approach slowed development when entering Release 3
+During Release 2, a seed file was introduced for ship's locaiton. The approach introduced unforeseen complexity, when entering Release 3, and require revisiting ship's location as an array from 1 to 95
 
 #Set Up Instructions:
 To run the Battleship location, please enter execute the following
@@ -73,5 +73,5 @@ The program's Models included OnePlayer, TwoPlayer, and Ship
 Future Releases will include the following functionality:
 1) Load player data upon resuming game
 2) Ensure random locations are unique 
-
+3) Refactor variables into objects (ex: one_player_hit_counter to one_player.hit_counter) 
 
