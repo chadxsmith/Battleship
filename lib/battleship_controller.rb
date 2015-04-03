@@ -35,7 +35,7 @@ case launch_game
       puts "Each game can have two players"
       puts "Enter the first player's name"
       one_player_name = gets.chomp
-      one_player = Oneplayer.create(name:one_player_name,ship_one_position:player_two_ship_one, ship_two_position:player_two_ship_two, hit_count:0, turn_count:0)
+      one_player = Oneplayer.create(name:one_player_name,ship_one_position:player_one_ship_one, ship_two_position:player_one_ship_two, hit_count:0, turn_count:0)
 
 
       puts "Winning a match involves sinking both players battle ships; maintaining 5 spots each. At the moment, " + one_player_name + " has two ships"
@@ -183,6 +183,7 @@ case launch_game
                           abort
 
                       else
+                        abort
 
                       end
 
