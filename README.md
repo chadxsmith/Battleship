@@ -14,7 +14,7 @@ Upon defining each Release, User Stories were provided to ensure greater clarity
 The Release and User Stories are avaliable here: https://trello.com/b/krHSNrtE/battleship
 
 #Rspec Script: 
-The bridge between problem solving strategy and code was my Rspec script. The material included: 
+The bridge between problem solving strategy and code was my Rspec script. Each line uncovered User Stories requiring additional details, as well as solutions requiring rethinking  
 
 - player has two ships 
 - player has name
