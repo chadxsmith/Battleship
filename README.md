@@ -45,9 +45,9 @@ Release 2:
 - Ship - Location 
 
 Release 3:
-Player 1 - Name, Hit_count, Turn_count, Ship_Position_One, Ship_Position_Two
-Player 2 - Name, Hit_count, Turn_count, Ship_Position_One, Ship_Position_Two
-Ship - Location 
+- Player 1 - Name, Hit_count, Turn_count, Ship_Position_One, Ship_Position_Two
+- Player 2 - Name, Hit_count, Turn_count, Ship_Position_One, Ship_Position_Two
+- Ship - Location 
 
 #Pseudo Coding: 
 Before developing for each Release, pseudo coding was utilized to draw solutions before typing commands. Leveraged drawings can be found here: https://drive.google.com/drive/u/1/#folders/0Bw3DcedwlFaVSlNmV243Q1ljeDQ
