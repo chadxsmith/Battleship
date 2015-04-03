@@ -16,19 +16,19 @@ The Release and User Stories are avaliable here: https://trello.com/b/krHSNrtE/b
 #Rspec Script: 
 The bridge between problem solving strategy and code was my Rspec script. The material included: 
 
-player has two ships 
-player has name
-player has hits
-player has turns
-player has winner (boolean)
-player has ship_one_position
-player has ship_two_position
-match has two players 
-player, when starting match, has a winner (boolean) of nil 
-player, when starting match, has an ship_one_position of 5 random integers in sequential order up to 20 and when starting match has an ship_two_position of 5 random integers in sequential order up to 20 
-match is complete when one player has 10 hits AND when one player's winner boolean equals true
+- player has two ships 
+- player has name
+- player has hits
+- player has turns
+- player has winner (boolean)
+- player has ship_one_position
+- player has ship_two_position
+- match has two players 
+- player, when starting match, has a winner (boolean) of nil 
+- player, when starting match, has an ship_one_position of 5 random integers in sequential order up to 20 and when      starting match has an ship_two_position of 5 random integers in sequential order up to 20 
+- match is complete when one player has 10 hits AND when one player's winner boolean equals true
 
-(Note: The core focus on the script revolved around completing Release 1 and 2)
+(Note: The script guided Release 1 and 2)
 
 
 #ERD:
