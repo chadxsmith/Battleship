@@ -58,20 +58,20 @@ During Release 2, a seed file was introduced for ship's locaiton. The approach i
 
 #Set Up Instructions:
 To run the Battleship location, please enter execute the following
-- 1) Download battleship_controller.rb and battleship_model.rb
-- 2) Download PostgreSQL
-- 3) Open PostgreSQL
-- 4) Within the command line, run PSQL
-- 5) Create a database called battleship_db
-- 6) Within the model file, uncomment the line titled # binding.pry
-- 7) Within the command line, run CreateDB.new 
+- Download battleship_controller.rb and battleship_model.rb
+- Download PostgreSQL
+- Open PostgreSQL
+- Within the command line, run PSQL
+- Create a database called battleship_db
+- Within the model file, uncomment the line titled # binding.pry
+- Within the command line, run CreateDB.new 
 
 #Models:
 The program's Models included OnePlayer, TwoPlayer, and Ship
 
 #Future Releases:
 Future Releases will include the following functionality:
-- 1) Load player data upon resuming game
-- 2) Ensure random locations are unique 
-- 3) Refactor variables into objects (ex: one_player_hit_counter to one_player.hit_counter) 
+- Load player data upon resuming game
+- Ensure random locations are unique 
+- Refactor variables into objects (ex: one_player_hit_counter to one_player.hit_counter) 
 
